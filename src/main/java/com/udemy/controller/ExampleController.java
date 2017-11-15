@@ -1,5 +1,8 @@
 package com.udemy.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +19,7 @@ public class ExampleController {
 	//Primera forma
 	@GetMapping("/exampleString")
 	public String exampleString(Model model) {
-		model.addAttribute("person", new Person("Wil", 33));
+		model.addAttribute("people", getPeople());
 		return EXAMPLE_VIEW;
 	}
 	
@@ -24,7 +27,16 @@ public class ExampleController {
 	@GetMapping("/exampleMAV")
 	public ModelAndView exampleMAV() {
 		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
-		mav.addObject("person", new Person("Pepe", 23));
+		mav.addObject("people", getPeople());
 		return mav;
+	}
+	
+	private List<Person> getPeople(){
+		 List<Person> people = new ArrayList<>();
+		 people.add(new Person("Pepe", 23));
+		 people.add(new Person("Luis", 30));
+		 people.add(new Person("Maria", 25));
+		 people.add(new Person("Wil", 20));
+		 return people;
 	}
 }
