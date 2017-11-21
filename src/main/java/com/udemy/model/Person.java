@@ -1,6 +1,11 @@
 package com.udemy.model;
 
 public class Person {
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+
 	private String name;
 	private int age;
 
