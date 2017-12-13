@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="course")
 public class Course {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -61,5 +61,10 @@ public class Course {
 		this.hours = hours;
 	}
 	
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours="
+				+ hours + "]";
+	}
 	
 }
