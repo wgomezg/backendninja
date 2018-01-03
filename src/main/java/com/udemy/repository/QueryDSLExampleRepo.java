@@ -25,7 +25,6 @@ public class QueryDSLExampleRepo {
 		
 		BooleanBuilder predicateBuilder = new BooleanBuilder(qCourse.description.endsWith("OP"));
 		
-		
 		if(exists) {
 			Predicate predicate2 = qCourse.id.eq(23);
 			predicateBuilder.and(predicate2);
